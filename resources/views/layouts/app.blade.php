@@ -206,19 +206,21 @@
                     <h3>Contact us </h3>
                     <ul class="loca">
                       <li>
-                        <a href="#"><img src="{{asset('site/icon/loc.png')}}" alt="#" /></a>London 145
-                        <br>United Kingdom </li>
+                        <a href="#"><img src="{{asset('site/icon/loc.png')}}" alt="#" /> Suite 7,<br> Yatudu Complex, <br>
+                          Opposite Federal University of Technology, <br> Minna, Niger State, Nigeria. </a>
+                      </li>
                         <li>
-                          <a href="#"><img src="{{asset('site/icon/email.png')}}" alt="#" /></a>demo@gmail.com </li>
+                          <a href="#"><img src="{{asset('site/icon/email.png')}}" alt="#" /></a> info@digirealm.com.ng</li>
                           <li>
-                            <a href="#"><img src="{{asset('site/icon/call.png')}}" alt="#" /></a>+12586954775 </li>
+                            <a href="#"><img src="{{asset('site/icon/call.png')}}" alt="#" /></a> +234 806 816 6776 <br> +234 817 174 9191
+                          </li>
                           </ul>
-                          <ul class="social_link">
+                          {{-- <ul class="social_link">
                             <li><a href="#"><img src="{{asset('site/icon/fb.png')}}"></a></li>
                             <li><a href="#"><img src="{{asset('site/icon/tw.png')}}"></a></li>
                             <li><a href="#"><img src="{{asset('site/icon/lin(2).png')}}"></a></li>
                             <li><a href="#"><img src="{{asset('site/icon/instagram.png')}}"></a></li>
-                          </ul>
+                          </ul> --}}
 
                         </div>
                       </div>
