@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('admin/assets/img/olabisi-logo.png') }}">
-    <title>IsaacOlabisiEdu Admin</title>
+    <title>Digi-Realm City Solution Online Learning</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/font-awesome.min.css') }}">
@@ -25,7 +25,7 @@
         <div class="header">
 			<div class="header-left">
 				<a href="{{ url('admin/dashoard') }}" class="logo">
-					<img style="width: 70px; height: 40px" src="{{ asset('admin/assets/img/olabisi-logo.png') }}" width="35" height="35" alt=""> <span>IsaacOlabisiEdu</span>
+					<img style="width: 70px; height: 40px" src="{{asset('site/images/digi-logo-dashboard.png')}}" width="70" height="35" alt="">
 				</a>
 			</div>
 			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
@@ -76,6 +76,9 @@
                             <a href="{{ url('admin/students') }}"><i class="fa fa-group"></i> <span>Students</span></a>
                         </li>
                         <li>
+                            <a href="{{ route('tutors.index') }}"><i class="fa fa-graduation-cap"></i> <span>Tutors</span></a>
+                        </li>
+                        <li>
                             <a href="{{ route('courses.index') }}"><i class="fa fa-graduation-cap"></i> <span>Courses</span></a>
                         </li>
                         <li>
@@ -83,6 +86,12 @@
                         </li>
                         <li>
                             <a href="{{ route('lectures.index') }}"><i class="fa fa-book"></i> <span>Lectures</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('assignments.index') }}"><i class="fa fa-book"></i> <span>Assignments</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('chats.index') }}"><i class="fa fa-comment"></i> <span>chats</span></a>
                         </li>
                         <li>
                             {{-- <a href="{{ route('adverts.index') }}"><i class="fa fa-book"></i> <span>adverts</span></a> --}}

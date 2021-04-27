@@ -52,9 +52,11 @@
       {{-- </div> --}}
       <!-- /.content-wrapper -->
       <footer class="">
+        {{-- <p>Copyright © <script> var date = new Date(); document.write(date.getFullYear())</script> Powered by <a href="http://digirealm.com.ng/">Digi-Realm City Solution </a></p> --}}
+
         <strong
-          >Copyright &copy; 2014-2020
-          <a href="https://adminlte.io">AdminLTE.io</a>.</strong
+          >Copyright &copy;<script> var date = new Date(); document.write(date.getFullYear())</script> Powered by 
+          <a href="http://digirealm.com.ng/">Digi-Realm City Solution </a>.</strong
         >
         {{-- All rights reserved.
         <div class="float-right d-none d-sm-inline-block">

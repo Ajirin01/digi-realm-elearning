@@ -20,7 +20,7 @@ class CreateCoursesTable extends Migration
             $table->string('course_image');
             $table->string('course_duration');
             $table->integer('tutor_id')->unsigned();
-            $table->foreign('tutor_id')->references('id')->on('tutores')->onDelete('cascade');
+            $table->foreign('tutor_id')->references('id')->on('tutors')->onDelete('cascade');
             $table->timestamps();
         });
     }

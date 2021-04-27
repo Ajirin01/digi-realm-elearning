@@ -22,8 +22,21 @@
         </div>
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-            <form action="{{ route('courses.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
+                <form action="{{ route('courses.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group">
+                        <label>Tutor</label>
+                        @if(session('errors'))
+                        <div class="text text-danger">{{session('errors')->first('course_duration')}}*</div>
+                        @endif
+                        {{-- <input class="form-control" type="text" name="course_duration"> --}}
+                        <select class="form-control" name="tutor_id" id="">
+                            <option value="1 month"> Please Select Tutor</option>
+                            @foreach ($tutors as $tutor)
+                                <option value="{{$tutor->id}}">{{$tutor->tutor_name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label>Course Name</label>
                         @if(session('errors'))

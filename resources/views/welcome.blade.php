@@ -105,10 +105,12 @@
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
     <div class="about-box">
         <h2>About <strong class="yellow">Our Programs</strong></h2>
-        <p> orem ipsum dolor sit amet, consectetur adipisicing elit. Quas voluptatem maiores eaque similique non distinctio voluptates perspiciatis omnis, repellendus ipsa aperiam, laudantium voluptatum nulla?.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, assumenda, vo
-        luptatum. Libero eligendi molestias iure error animi totam laudantium, aspernatur similique id eos at consectetur illo culpa,  </p>
-        <a href="Javascript:void(0)">Read more</a>
+        <p>Digi-Realm City Solution is an integrated Information Communication and Technology company that is well-positioned
+            to deliver complete Information Technology skills by successfully combininig both Theoritical and practicals to 
+            equipe learners with the required skills. Our certified processes and years of experience are reflected in the success 
+            we have achieved in training of learners. With our learning plateform, learners can learn online or in class or both.
+          </p>
+        <a href="#courses">View Courses</a>
     </div>
     </div>
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -131,48 +133,54 @@
     <div class="col-md-12">
     <div class="titlepage">
         <h2>Some <strong class="yellow">important facts</strong></h2>
-        <span>luptatum. Libero eligendi molestias iure error animi totam laudantium, aspernatur similique id eos a
-        t consectetur illo culpa,</span>
+        <span>92% of web developers are men according to a recent survey	Companies <br>
+            Microsoft is the largest software company. In 2020 it made $138.6 billion	<br>
+            Java is the most popular programming languages. 59% of developers use it	<br>
+            {{-- Apple's original logo was Isaac newton leant against an apple tree.	
+            IBM was founded in 1896 with the name "Tabulating Machine Company" --}}
+        </span>
     </div>
     </div>
 </div>
 </div>
 <div class="important_bg">
-<div class="container">
-    <div class="row">
-
-    <div class="col col-xs-12">
-        <div class="important_box">
-        <h3>200+</h3>
-        <span>Teachers</span>
+    <div class="container">
+        <div class="row">
+        <div class="col col-xs-12">
+            <div class="stat-count">
+                <div class="important_box">
+                    <h3 class="stat-timer">20+</h3>
+                    <span><i class="glyhicon glyhicon-user"></i>Graduates</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col col-xs-12">
+            <div class="stat-count">
+                <div class="important_box">
+                    <h3 class="stat-timer">50+</h3>
+                    <span>Courses</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col col-xs-12">
+            <div class="stat-count">
+                <div class="important_box">
+                    <h3 class="stat-timer">200+</h3>
+                    <span>Members</span>
+                </div>
+            </div>
+            
+        </div>
+        {{-- <div class="col col-xs-12">
+            <div class="important_box">
+            <h3>10+</h3>
+            <span>countries</span>
+            </div>
+        </div> --}}
         </div>
     </div>
-    <div class="col col-xs-12">
-        <div class="important_box">
-        <h3>20+</h3>
-        <span>Colleges</span>
-        </div>
-    </div>
-    <div class="col col-xs-12">
-        <div class="important_box">
-        <h3>50+</h3>
-        <span>Courses</span>
-        </div>
-    </div>
-    <div class="col col-xs-12">
-        <div class="important_box">
-        <h3>200+</h3>
-        <span>Members</span>
-        </div>
-    </div>
-    <div class="col col-xs-12">
-        <div class="important_box">
-        <h3>10+</h3>
-        <span>countries</span>
-        </div>
-    </div>
-    </div>
-</div>
 </div>
 </div>
 </div>
@@ -185,57 +193,34 @@
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
     <div class="box_bg">
         <div class="box_bg_img">
-        <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="box_my">
-                <figure><a href="{{url('courses/course/1/detail')}}"><img src="{{asset('site/images/my1.jpg')}}"></a></figure>
-                <div class="overlay">
-                <h3>Data Structures</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content o</p>
+            <div class="row">
+                @foreach ($courses as $course)
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="box_my">
+                        <figure><a href="{{url('courses/course/'.$course->id.'/detail')}}"><img style="height: 150px" alt="course image" src="public{{$course->course_image}}"></a></figure>
+                        <div class="overlay">
+                            <h3>{{$course->course_name}}</h3>
+                            <p>{{$course->course_description}}</p>
+                        </div>
+                    </div>
                 </div>
+                @endforeach
             </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="box_my">
-                <figure><a href="{{url('courses/course/1/detail')}}"><img src="{{asset('site/images/my2.jpg')}}"></a></figure>
-                <div class="overlay">
-                <h3>Cinematography</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content o</p>
-                </div>
-            </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="box_my">
-                <figure><a href="{{url('courses/course/1/detail')}}"><img src="{{asset('site/images/my3.jpg')}}"></a></figure>
-                <div class="overlay">
-                <h3>Skills</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content o</p>
-                </div>
-            </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="box_my">
-                <figure><a href="{{url('courses/course/1/detail')}}"><img src="{{asset('site/images/my4.jpg')}}"></a></figure>
-                <div class="overlay">
-                <h3>Teaching Science</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content o</p>
-                </div>
-            </div>
-            </div>
-
-
-
-        </div>
         </div>
     </div>
     </div>
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 border_right">
     <div class="box_text">
         <div class="titlepage">
-        <h2>My <strong class="yellow"> Courses</strong></h2>
+        <h2>Our <strong class="yellow"> Courses</strong></h2>
         </div>
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-        <a href="Javascript:void(0)">Read more</a>
+        <p>We offer purposeful and insightful ICT training, with optimal fusion of practical and theoritical training. Courses
+            we offer are: Website design and development, Software development, Cisco Networking and Implimentation, Mobile/
+            Andriod App. Development, Microsoft Technical Associate Networking, Microsoft Technical Associate Security,
+            Microsoft Technical Associate Sever Administration and configuration, MTA Cloud computing, CyberSecurity an 
+            Graphics design with Computer utilization.
+        </p>
+        <a href="#contact">Contact Us</a>
     </div>
     </div> 
 </div>
@@ -279,9 +264,21 @@
 <div class="row">
     <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
     <div class="make_text">
-        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-        </p>
+        <p><strong>ICT SERVICES</strong> <br>
+            We offer purposeful and insightful ICT Services, with optimal fusion of intelligence, process, and technology to assist clients in developing solutions, Networking, and infrastructure with a new, invigorating operating model—one that establishes unmatched customer experiences and satisfaction.</p>
+
+            <p><strong>BPO SERVICES</strong> <br>
+                Our focus is to promotes process optimization that includes all clients in order to work with a lean budget and costs while converting their business operations for a sustainable benefit.</p>
         <!-- <a href="#contact">Contact</a> -->
+        <p><strong>ICT PROJECT IMPLEMENTATION</strong> <br>
+        We offer comprehensive ICT implementation services meant to channel our core technologies as enterprise backbones to our customers’ operation and processing environments.
+
+        </p>
+        <p><strong>SYSTEM MAINTENANCE AND SUPPORT</strong> <br>
+            We offer ICT infrastructure maintenance and support Services both remotely and physicallly to keep Service delivery at optimum capacity.</p>
+        <p><strong>RESEARCH AND DEVELOPMENT</strong> <br>
+            We keep our clients updated with the most recent and trending technology to keep at par with best practices and methodologies.</p>
+        
         <a href="#contact">Contact Us</a>
     </div>
     </div>

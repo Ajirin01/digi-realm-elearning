@@ -105,9 +105,11 @@
   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
     <div class="about-box">
       <h2>About <strong class="yellow">Our Programs</strong></h2>
-      <p> orem ipsum dolor sit amet, consectetur adipisicing elit. Quas voluptatem maiores eaque similique non distinctio voluptates perspiciatis omnis, repellendus ipsa aperiam, laudantium voluptatum nulla?.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, assumenda, vo
-      luptatum. Libero eligendi molestias iure error animi totam laudantium, aspernatur similique id eos at consectetur illo culpa,  </p>
+      <p>Digi-Realm City Solution is an integrated Information Communication and Technology company that is well-positioned
+        to deliver complete Information Technology skills by successfully combininig both Theoritical and practicals to 
+        equipe learners with the required skills. Our certified processes and years of experience are reflected in the sucess 
+        we have achieved in training of learners
+      </p>
       <a href="Javascript:void(0)">Read more</a>
     </div>
   </div>
@@ -138,41 +140,43 @@
 </div>
 </div>
 <div class="important_bg">
-<div class="container">
-  <div class="row">
-
-    <div class="col col-xs-12">
-      <div class="important_box">
-        <h3>200+</h3>
-        <span>Teachers</span>
+  <div class="container">
+      <div class="row">
+      <div class="col col-xs-12">
+          <div class="stat-count">
+              <div class="important_box">
+                  <h3 class="stat-timer">20+</h3>
+                  <span><i class="glyhicon glyhicon-user"></i>Graduates</span>
+              </div>
+          </div>
+          
       </div>
-    </div>
-    <div class="col col-xs-12">
-      <div class="important_box">
-        <h3>20+</h3>
-        <span>Colleges</span>
+      <div class="col col-xs-12">
+          <div class="stat-count">
+              <div class="important_box">
+                  <h3 class="stat-timer">50+</h3>
+                  <span>Courses</span>
+              </div>
+          </div>
+          
       </div>
-    </div>
-    <div class="col col-xs-12">
-      <div class="important_box">
-        <h3>50+</h3>
-        <span>Courses</span>
+      <div class="col col-xs-12">
+          <div class="stat-count">
+              <div class="important_box">
+                  <h3 class="stat-timer">200+</h3>
+                  <span>Members</span>
+              </div>
+          </div>
+          
       </div>
-    </div>
-    <div class="col col-xs-12">
-      <div class="important_box">
-        <h3>200+</h3>
-        <span>Members</span>
+      {{-- <div class="col col-xs-12">
+          <div class="important_box">
+          <h3>10+</h3>
+          <span>countries</span>
+          </div>
+      </div> --}}
       </div>
-    </div>
-    <div class="col col-xs-12">
-      <div class="important_box">
-        <h3>10+</h3>
-        <span>countries</span>
-      </div>
-    </div>
   </div>
-</div>
 </div>
 </div>
 </div>
@@ -186,42 +190,18 @@
     <div class="box_bg">
       <div class="box_bg_img">
         <div class="row">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="box_my">
-              <figure><a href="{{url('courses/course/1/detail')}}"><img src="{{asset('site/images/my1.jpg')}}"></a></figure>
-              <div class="overlay">
-                <h3>Data Structures</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content o</p>
-              </div>
+          @foreach ($courses as $course)
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+              <div class="box_my">
+                <figure><a href="{{url('courses/course/'.$course->id.'/detail')}}"><img style="height: 150px" alt="course image" src="public{{$course->course_image}}"></a></figure>
+
+                <div class="overlay">
+                  <h3>{{$course->course_name}}</h3>
+                  <p>{{$course->course_description}}</p>
+                </div>
             </div>
           </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="box_my">
-              <figure><a href="{{url('courses/course/1/detail')}}"><img src="{{asset('site/images/my2.jpg')}}"></a></figure>
-              <div class="overlay">
-                <h3>Cinematography</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content o</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="box_my">
-              <figure><a href="{{url('courses/course/1/detail')}}"><img src="{{asset('site/images/my3.jpg')}}"></a></figure>
-              <div class="overlay">
-                <h3>Skills</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content o</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="box_my">
-              <figure><a href="{{url('courses/course/1/detail')}}"><img src="{{asset('site/images/my4.jpg')}}"></a></figure>
-              <div class="overlay">
-                <h3>Teaching Science</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content o</p>
-              </div>
-            </div>
-          </div>
+          @endforeach
 
 
 

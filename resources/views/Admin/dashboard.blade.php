@@ -44,46 +44,33 @@
 				<div class="row">
 					<div class="col-12 col-md-6 col-lg-8 col-xl-8">
 						<div class="card">
-							<div class="card-header">
-								{{-- <h4 class="card-title d-inline-block">Upcoming Appointments</h4> <a href="{{ route('appointments.index') }}" class="btn btn-primary float-right">View all</a> --}}
-							</div>
-							<div class="card-body p-0">
-								<div class="table-responsive">
-									<table class="table mb-0">
-										<thead class="d-none">
-											<tr>
-												<th>Client Name</th>
-												<th>Client ID</th>
-												<th>Timing</th>
-												<th class="text-right">Status</th>
-											</tr>
-										</thead>
-										<tbody>
-                                            @foreach ($profiles as $profile)
-                                                @foreach ($profile->appointments as $appointment)
-                                                <tr>
-                                                    <td style="min-width: 200px;">
-                                                        <a class="avatar" href="{{ route('profile.index') }}"><i class="fa fa-user"></i></a>
-                                                        <h2><a href="{{ route('profile.index') }}">{{$profile->first_name}} {{$profile->last_name}}<span>{{$profile->address}}</span></a></h2>
-                                                    </td>                 
-                                                    <td>
-                                                        <h5 class="time-title p-0">Client ID</h5>
-                                                        <p class="text text-center">{{$profile->id}}</p>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="time-title p-0">Timing</h5>
-                                                        <p>{{$appointment->appointment_time}}</p>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <a href="{{ route('appointments.index') }}" class="btn btn-outline-primary take-btn">Take up</a>
-                                                    </td>
-                                                </tr>
-                                                @endforeach
-                                            @endforeach
-										</tbody>
-									</table>
-								</div>
-							</div>
+							<div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title d-inline-block">New Users </h4> <a href="{{ route('users.index') }}" class="btn btn-primary float-right">View all</a>
+                                        </div>
+                                        <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table mb-0 new-patient-table">
+                                                    <tbody>
+                                                        @foreach ($users as $user)
+                                                            <tr>
+                                                                <td>
+                                                                    <img width="28" height="28" class="rounded-circle" src="assets/img/user.jpg" alt=""> 
+                                                                    <h2>{{$user->name}}</h2>
+                                                                </td>
+                                                                <td class="text text-left">{{$user->email}}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 						</div>
 					</div>
                     <div class="col-12 col-md-6 col-lg-4 col-xl-4">
@@ -117,33 +104,6 @@
                             </div>
                         </div>
                     </div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="card">
-							<div class="card-header">
-								<h4 class="card-title d-inline-block">New Users </h4> <a href="{{ route('users.index') }}" class="btn btn-primary float-right">View all</a>
-							</div>
-							<div class="card-block">
-								<div class="table-responsive">
-									<table class="table mb-0 new-patient-table">
-										<tbody>
-                                            @foreach ($users as $user)
-                                                <tr>
-                                                    <td>
-                                                        <img width="28" height="28" class="rounded-circle" src="assets/img/user.jpg" alt=""> 
-                                                        <h2>{{$user->name}}</h2>
-                                                    </td>
-                                                    <td class="text text-left">{{$user->email}}</td>
-                                                </tr>
-                                            @endforeach
-											
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
             </div>
             

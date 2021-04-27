@@ -1,7 +1,7 @@
 <?php
-
 Route::get('/', function () {
-    return view('welcome');
+    $courses = App\Course::all();
+    return view('welcome',['courses' => $courses]);
     // return redirect('/home');
 });
 
@@ -22,14 +22,18 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/calender', 'DashboardController@calender');
     Route::get('/records/{student}', 'DashboardController@records');
     Route::get('/direct-chat/{profile}', 'DashboardController@directChat');
+    Route::post('/direct-chat/{profile}', 'DashboardController@sendDirectChat');
 });
 
 Route::prefix('admin')->group(function () {
-    Route::resource('students',	'Admin\StudentsController');
     Route::get('dashboard', 'Admin\DashboardController@dashboard');
+    Route::resource('students',	'Admin\StudentsController');
     Route::resource('courses', 'Admin\CoursesController');
     Route::resource('profile', 'Admin\ProfileController');
+    Route::resource('tutors', 'Admin\TutorsController');
     Route::resource('users', 'Admin\UsersController');
     Route::resource('lectures', 'Admin\LecturesController');
     Route::resource('subscriptions', 'Admin\SubscriptionsController');
+    Route::resource('chats', 'Admin\ChatsController');
+    Route::resource('assignments', 'Admin\AssignmentController');
 }); 

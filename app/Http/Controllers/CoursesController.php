@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Course as Courses;
 
 class CoursesController extends Controller
 {
     public function courseDetails($id){
-        return view('course-details',['id' => $id]);
+        $course = Courses::find($id);
+        return view('course-details',['course' => $course]);
     }
 }

@@ -13,19 +13,49 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="">
+
+  <link
+      rel="stylesheet"
+      href="{{asset('site/dashboard/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}"
+    />
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="{{asset('site/dashboard/plugins/jqvmap/jqvmap.min.css')}}" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{asset('site/dashboard/dist/css/adminlte.min.css')}}" />
+    <!-- overlayScrollbars -->
+    <link
+      rel="stylesheet"
+      href="{{asset('site/dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}"
+    />
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{asset('site/dashboard/plugins/daterangepicker/daterangepicker.css')}}" />
+    <!-- summernote -->
+    <link rel="stylesheet" href="{{asset('site/dashboard/plugins/summernote/summernote-bs4.css')}}" />
+    <!-- Google Font: Source Sans Pro -->
   <!-- fevicon -->
   <link rel="icon" href="{{asset('site/images/fevicon.png')}}" type="image/gif" />
   <!-- bootstrap css -->
   <link rel="stylesheet" href="{{asset('site/css/bootstrap.min.css')}}">
   <!-- style css -->
+  {{-- <link rel="stylesheet" href="{{asset('site/style_counter.css')}}" /> --}}
+  <link rel="stylesheet" href="{{asset('site/css/animate.css')}}" />
+
   <link rel="stylesheet" href="{{asset('site/css/style.css')}}">
   <!-- Responsive-->
   <link rel="stylesheet" href="{{asset('site/css/responsive.css')}}">  
   <!-- Scrollbar Custom CSS -->
   <link rel="stylesheet" href="{{asset('site/css/jquery.mCustomScrollbar.min.css')}}">
+
+  <link rel="stylesheet" href="{{asset('site/css/jquery.modal.css')}}">
   <!-- Tweaks for older IEs-->
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+  
+
+  <link href="{{asset('site/css/all.min.css')}}" rel="stylesheet" />
+  {{-- <link href="{{asset('site/css/templatemo-style.css')}}" rel="stylesheet" /> --}}
+  {{-- <link rel="stylesheet" href="{{asset('site/style_counter.css')}}" /> --}}
+  <link rel="stylesheet" href="{{asset('site/fonts/fontawesome-webfont.ttf')}}" />
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -158,7 +188,7 @@
     <!-- end contact -->
 
     <!--  footer -->
-    <footr>
+    <footer>
       <div class="footer ">
         <div class="container">
           <div class="row">
@@ -168,10 +198,6 @@
                 <input class="newslatter" placeholder="Email" type="text" name=" Email">
                 <button class="submit">Subscribe</button>
               </form>
-            </div>
-            <div class="col-md-12">
-              <h2>Newsletter</h2>
-              <span>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in  </span>
             </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
               <div class="row">
@@ -200,22 +226,25 @@
                         <div class="address">
                           <h3>Courses</h3>
                           <ul class="Menu_footer">
-                            <li class="active"> <a href="#">Masters Degree</a> </li>
-                            <li><a href="#">Post GraduateU</a> </li>
-                            <li><a href="#">Ndergraduate</a> </li>
-                            <li><a href="#">Engineering</a> </li>
-                            <li><a href="#">Ph.D Degree</a> </li>
+                            <li class="active"> <a href="#">Website design and development</a> </li>
+                            <li><a href="#">Cisco Networking and Implimentation</a> </li>
+                            <li><a href="#">Software development</a> </li>
+                            <li><a href="#"> Mobile/
+                              Andriod App. Development
+                            </a> </li>
+                            <li><a href="#">CyberSecurity an 
+                              Graphics design with Computer utilization.</a> </li>
                           </ul>
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="address">
-                          <h3>Information</h3>
+                          <h3></h3>
                           <ul class="Links_footer">
-                            <li class="active"><a href="#">Campus Tour</a> </li>
-                            <li><a href="#">Student Lifes</a> </li>
-                            <li><a href="#">Cholarship</a> </li>
-                            <li><a href="#"> Admission</a> </li>
+                            <li class="active"><a href="#">Microsoft Technical Associate Networking,</a> </li>
+                            <li><a href="#">Microsoft Technical Associate Security,</a> </li>
+                            <li><a href="#">Microsoft Technical Associate Sever Administration and configuration</a> </li>
+                            <li><a href="#">MTA Cloud computing</a> </li>
                             <li><a href="#">Leadership</a> </li>
                           </ul>
                         </div>
@@ -234,21 +263,24 @@
               </div>
               <div class="copyright">
                 <div class="container">
-                  <p>Copyright © 2019 Design by <a href="https://html.design/">Free Html Templates </a></p>
+                  <p>Copyright © <script> var date = new Date(); document.write(date.getFullYear())</script> Powered by <a href="http://digirealm.com.ng/">Digi-Realm City Solution </a></p>
                 </div>
               </div>
             </div>
-          </footr>
+          </footer>
           <!-- end footer -->
           <!-- Javascript files-->
           <script src="{{asset('site/js/jquery.min.js')}}"></script>
           <script src="{{asset('site/js/popper.min.js')}}"></script>
           <script src="{{asset('site/js/bootstrap.bundle.min.js')}}"></script>
-          <script src="{{asset('site/js/jquery-3.0.0.min.js')}}"></script>
+          {{-- <script src="{{asset('site/js/jquery-3.0.0.min.js')}}"></script> --}}
           <script src="{{asset('site/js/plugin.js')}}"></script>
           <!-- sidebar -->
+          <script src="{{asset('site/js/animate.js')}}"></script>
+
           <script src="{{asset('site/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
           <script src="{{asset('site/js/custom.js')}}"></script>
+          <script src="{{asset('site/js/jquery.modal.js')}}"></script>
           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 

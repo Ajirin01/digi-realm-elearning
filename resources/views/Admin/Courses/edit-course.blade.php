@@ -24,6 +24,22 @@
                 @csrf
                 @method('PUT')
                 <div class="form-group">
+                    <label>Tutor</label>
+                    @if(session('errors'))
+                    <div class="text text-danger">{{session('errors')->first('course_duration')}}*</div>
+                    @endif
+                    {{-- <input class="form-control" type="text" name="course_duration"> --}}
+                    <select class="form-control" name="tutor_id" id="">
+                        {{-- <option value="{{ $course->tutor_id }}">{{ $course->tutors() }}</option> --}}
+                        <option value="{{ $course->tutor_id }}"><?php echo json_encode($course->tutors());?></option>
+
+                        @foreach ($tutors as $tutor)
+                            <option value="{{$tutor->id}}">{{$tutor->tutor_name}}</option>
+                            <option value="{{ $course->tutor_id }}"><?php echo json_encode($tutor->courses());?></option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Course Title</label>
                     @if(session('errors'))
                     <div class="text text-danger">{{session('errors')->first('course_name')}}*</div>

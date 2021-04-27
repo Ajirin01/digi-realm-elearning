@@ -30,4 +30,10 @@ class DashboardController extends Controller
         $profile = Profile::find($id);
         return view('Dashboard.directChat',['profile'=>$profile]);
     }
+
+    public function postDirectChat(Request $request, $id){
+        return response()->json($request->all());
+        // $profile = Profile::find($id);
+        // return view('Dashboard.directChat',['profile'=>$profile]);
+    }
 }

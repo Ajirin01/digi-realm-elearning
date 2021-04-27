@@ -15,6 +15,9 @@ class CreateGradesTable extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('grade');
+            $table->integer('lecture_id')->unsigned();
+            $table->foreign('lecture_id')->references('id')->on('lectures')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Course as Courses;
+use App\Tutor as Tutors;
 use Validator;
 use	Illuminate\Support\Facades\Storage;
 
@@ -18,14 +19,18 @@ class CoursesController extends Controller
 
     public function create()
     {
-        return view('Admin.Courses.course-creation-form');
+        $Tutors = new Tutors();
+        $all_tutors = $Tutors::all();
+        return view('Admin.Courses.course-creation-form',['tutors' => $all_tutors ]);
     }
 
     public function store(Request $request)
     {
+        $Tutors = new Tutors();
         $rules = [
             'course_name' => 'required|min:5|max:50',
             'course_image' => 'required',
+            'tutor_id' => 'required',
             'course_duration' => 'required',
             'course_description' => 'required|min:20|max:500'
         ];
@@ -43,13 +48,22 @@ class CoursesController extends Controller
     
                 $course_name = $request->course_name;
                 $course_description = $request->course_description;
+                $tutor_id = $request->tutor_id;
                 $course_image = '/uploads/'.$image_name;
                 $course_duration = $request->course_duration;
-                $create_course = Courses::create(['course_name'=>$course_name,
-                'course_duration'=>$course_duration,
-                 'course_description'=>$course_description,
-                 'course_image'=>$course_image]);
-    
+                // $create_course = Courses::create(['course_name'=>$course_name,
+                // 'course_duration'=>$course_duration,
+                //  'course_description'=>$course_description,
+                //  'tutor_id'=>$tutor_id,
+                //  'course_image'=>$course_image]);
+                
+                 $tutor_to_create_course = $Tutors::find($tutor_id);
+                 $create_course = $tutor_to_create_course->courses()->create(['course_name'=>$course_name,
+                 'course_duration'=>$course_duration,
+                  'course_description'=>$course_description,
+                  'tutor_id'=>$tutor_id,
+                  'course_image'=>$course_image]);
+                  
                 if($create_course->save()){
                     $image->move($upload_path, $image_name);
                     return redirect()->back()->with('msg','course was successfully created!');
@@ -68,9 +82,10 @@ class CoursesController extends Controller
 
     public function edit($id)
     {
+        $all_tutors = Tutors::all();
         $course = Courses::find($id);
 
-        return view('Admin.Courses.edit-course',['course'=>$course]);
+        return view('Admin.Courses.edit-course',['course' => $course, 'tutors' => $all_tutors]);
     }
 
     public function update(Request $request, $id)
@@ -78,6 +93,7 @@ class CoursesController extends Controller
         $Course = Courses::findOrFail($id);
         $rules = [
             'course_name' => 'required|min:5|max:50',
+            'tutor_id' => 'required',
             'course_duration' => 'required',
             'course_description' => 'required|min:20|max:400'
         ];
@@ -96,10 +112,12 @@ class CoursesController extends Controller
                 $course_name = $request->course_name;
                 $course_description = $request->course_description;
                 $course_duration = $request->course_duration;
+                $tutor_id = $request->tutor_id;
                 $course_image = '/uploads/'.$image_name;
                 $create_course = $Course->update(['course_name'=>$course_name,
                  'course_description'=>$course_description,
                  'course_duration'=>$course_duration,
+                 'tutor_id'=>$tutor_id,
                  'course_image'=>$course_image]);
     
                 if($create_course){
@@ -110,14 +128,18 @@ class CoursesController extends Controller
                 $course_name = $request->course_name;
                 $course_description = $request->course_description;
                 $course_duration = $request->course_duration;
+                $tutor_id = $request->tutor_id;
                 $course_image = $Course->course_image;
                 $create_course = $Course->update(['course_name'=>$course_name,
                  'course_description'=>$course_description,
                  'course_duration'=>$course_duration,
+                 'tutor_id'=>$tutor_id,
                  'course_image'=>$course_image]);
     
                 if($create_course){
                     return redirect()->back()->with('msg','course was successfully Updated!');
+                }else{
+                    return redirect()->back()->with('error','course was not successfully Updated!');
                 }
             }
         }
@@ -126,7 +148,6 @@ class CoursesController extends Controller
     public function destroy($id)
     {
         $course = Courses::findOrFail($id);
-        Storage::delete('public/uploads/'.$course->course_image);
         $delete_course = $course->delete();
         if($delete_course){
             return redirect()->back()->with('msg','post was successfully deleted!');
