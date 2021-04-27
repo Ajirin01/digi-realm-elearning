@@ -25,4 +25,8 @@ class Lecture extends Model
     public function grades(){
         return $this->hasMany('App\Grade');
     }
+
+    public function assignments(){
+        return $this->hasMany('App\Assignment');
+    }
 }
